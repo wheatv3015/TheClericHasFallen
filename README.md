@@ -39,5 +39,8 @@ The `public/index.html` file contains a `<script src="bundle.js">` tag, which me
 `npm run build` will run the build only using minify with no sourcemap or local server and does NOT continue to monitor for changes.
 
 ## License
+//THIS IS A TEST
+   HELLO VINNY
+//THIS IS A TEST
 
 [MIT](LICENSE).
