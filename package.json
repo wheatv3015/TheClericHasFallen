@@ -1,0 +1,29 @@
+{
+  "name": "gdd325-esbuild-phaser3",
+  "version": "1.0.0",
+  "description": "Phaser 3 + ESBuild + ES6 Template Project",
+  "scripts": {
+    "dev": "node devServer.js",
+    "build": "esbuild --bundle src/main.js --outfile=public/bundle.js --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UWStout/gdd325-esbuild-phaser3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UWStout/gdd325-esbuild-phaser3/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/UWStout/gdd325-esbuild-phaser3#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "esbuild": "^0.5.26",
+    "eslint": "^7.8.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "phaser": "^3.24.0"
+  }
+}
