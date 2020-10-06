@@ -7,6 +7,7 @@ class Character {
     this.HP = currentHealth
     this.MaxHP = maxHealth
     this.Initiative = baseInitative
+    this.Counterattack = false
   }
 
   getAttack () {
@@ -29,9 +30,13 @@ class Character {
     return this.Initiative
   }
 
-  takeDamage (damageToTake) {
+  takeDamage (damageToTake, attackerRef) {
     if (damageToTake - this.Defense > 0) {
       this.HP = this.HP - (damageToTake - this.Defense)
+    }
+    if (this.Counterattack === true) {
+      attackerRef.takeDamage(this.getAttack()) // NOTE: this will cause an infinite loop between 2 counter attackers as is - debug later
+      // potential fixes includes letting counterattack only hit one target, extra boolean that checks against hitting the same target multiple times, a separate take damage function specifically for counterattacks that doesnt have this check
     }
     if (this.HP <= 0) {
       // destroy this character
@@ -52,6 +57,14 @@ class Character {
 
   removeBlock (amountToBlock) {
     this.Defense -= amountToBlock
+  }
+
+  addCounterattack () {
+    this.Counterattack = true
+  }
+
+  removeCounterattack () {
+    this.Counterattack = false
   }
 }
 

@@ -35,7 +35,7 @@ class Knight extends Character {
 
   // damage other character reference passed by UI
   knightDamage (otherCharacterRef) {
-    otherCharacterRef.Character.takeDamage(this.getAttack())
+    otherCharacterRef.Character.takeDamage(this.getAttack(), this.Character)
   }
 }
 
