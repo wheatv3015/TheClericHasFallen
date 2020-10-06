@@ -46,6 +46,14 @@ class Character {
       this.HP = this.HP + amountToHeal
     }
   }
+
+  addBlock (amountToBlock) {
+    this.Defense += amountToBlock
+  }
+
+  removeBlock (amountToBlock) {
+    this.Defense -= amountToBlock
+  }
 }
 
 export default Character
