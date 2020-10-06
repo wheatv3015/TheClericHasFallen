@@ -7,10 +7,12 @@ import CONFIG from './config.js'
 // Core phaser configuration object
 const config = {
   type: Phaser.AUTO,
-  width: CONFIG.SCENE_WIDTH,
-  height: CONFIG.SCENE_HEIGHT,
-  autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
-  mode: Phaser.Scale.FIT,
+  scale: {
+    width: CONFIG.SCENE_WIDTH,
+    height: CONFIG.SCENE_HEIGHT,
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
+    mode: Phaser.Scale.FIT
+  },
   physics: {
     default: 'arcade',
     arcade: {

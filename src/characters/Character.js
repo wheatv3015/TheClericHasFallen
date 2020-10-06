@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+// import Phaser from 'phaser'
 
 class Character {
   constructor (baseDamage, baseDefense, currentHealth, maxHealth, baseInitative) {
@@ -41,8 +41,7 @@ class Character {
   heal (amountToHeal) {
     if (amountToHeal + this.HP >= this.MaxHP) {
       this.HP = this.MaxHP
-    }
-    else {
+    } else {
       this.HP = this.HP + amountToHeal
     }
   }
