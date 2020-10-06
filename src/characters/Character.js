@@ -9,6 +9,7 @@ class Character {
     this.Initiative = baseInitative
     this.Counterattack = false
   }
+  // getters are needed for scene and ui access to character class stats
 
   getAttack () {
     return this.Attack
@@ -35,7 +36,7 @@ class Character {
       this.HP = this.HP - (damageToTake - this.Defense)
     }
     if (this.Counterattack === true) {
-      attackerRef.takeDamage(this.getAttack()) // NOTE: this will cause an infinite loop between 2 counter attackers as is - debug later
+      attackerRef.takeDamage(this.getAttack()) // NOTE: this will cause an infinite loop between 2 counter attackers as is - debug later, may not be an issue
       // potential fixes includes letting counterattack only hit one target, extra boolean that checks against hitting the same target multiple times, a separate take damage function specifically for counterattacks that doesnt have this check
     }
     if (this.HP <= 0) {
