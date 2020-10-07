@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+// import Phaser from 'phaser'
 
 import Character from './Character.js'
 
@@ -14,7 +14,9 @@ class Mushroom extends Character {
     this.Mode = CONFIG.MUSH_MODE
   }
 
-   //if (Mode == 0) Defensive Mode
+  // if (Mode == 0) Defensive Mode
 
-   //if (Mode == 1) Agressive Mode
+  // if (Mode == 1) Agressive Mode
 }
+
+export default Mushroom
