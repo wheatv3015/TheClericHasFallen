@@ -9,7 +9,7 @@ class Character {
     this.Initiative = baseInitative
     this.Counterattack = false
   }
-  // getters are needed for scene and ui access to character class stats
+  // getters are needed for scene and ui access to character class statstrello
 
   getAttack () {
     return this.Attack
