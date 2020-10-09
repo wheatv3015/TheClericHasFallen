@@ -1,7 +1,6 @@
 // import Phaser from 'phaser'
 
 import Character from './Character.js'
-
 import CONFIG from '../config.js'
 
 class Mushroom extends Character {
@@ -14,9 +13,39 @@ class Mushroom extends Character {
     this.Mode = CONFIG.MUSH_MODE
   }
 
-  // if (Mode == 0) Defensive Mode
+  mode () {
+    this.removeBlock(this.Defense)
+    var tempHP
 
-  // if (Mode == 1) Agressive Mode
+    if (tempHP < this.HP) {
+      // if hit move to agressive
+      this.Mode = 1
+    }
+
+    // Defensive Mode
+    if (this.Mode === 0) {
+      // DEFENSE HOO HOO
+      this.defend()
+    }
+
+    // Agressive Mode
+    if (this.Mode === 1) {
+      // choose target
+      this.attack(this.target)
+      // if not hit, move back to defensive
+      this.Mode = 0
+    }
+
+    tempHP = this.HP
+  }
+
+  attack (otherCharacterRef) {
+    otherCharacterRef.takeDamage(this.Attack, this)
+  }
+
+  defend () {
+    this.addBlock(this.Defense)
+  }
 }
 
 export default Mushroom
