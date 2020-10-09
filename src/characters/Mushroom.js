@@ -11,13 +11,13 @@ class Mushroom extends Character {
     this.MaxHP = CONFIG.MUSH_MAX_HEALTH
     this.Initiative = CONFIG.MUSH_INITIATIVE
     this.Mode = CONFIG.MUSH_MODE
+    this.tempHP = this.HP
   }
 
   mode () {
     this.removeBlock(this.Defense)
-    var tempHP
 
-    if (tempHP < this.HP) {
+    if (this.tempHP < this.HP) {
       // if hit move to agressive
       this.Mode = 1
     }
@@ -36,7 +36,7 @@ class Mushroom extends Character {
       this.Mode = 0
     }
 
-    tempHP = this.HP
+    this.tempHP = this.HP
   }
 
   attack (otherCharacterRef) {

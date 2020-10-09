@@ -12,7 +12,7 @@ class CombatController {
     const mushroom1 = new Mushroom()
     const mushroom2 = new Mushroom()
     const mushroom3 = new Mushroom()
-    var charsInScene = [cleric, knight, rogue, mushroom1, mushroom2, mushroom3]
+    this.charsInScene = [cleric, knight, rogue, mushroom1, mushroom2, mushroom3]
   }
   // check every character in scene for initiative
   // order initiative from highest to lowest
@@ -26,9 +26,9 @@ class CombatController {
     // ....
     // return the list order of characters
 
-    var orderedCharsInScene = new Array(0) // ordered array to be filled
+    this.orderedCharsInScene = new Array(0) // ordered array to be filled
     for (let j = 0; j < 6; j++) { // hardcoded for number of participants, find dynamic way around
-      var highestInit = 0 // default highest initiative to be checked against is first in charsInScene array
+      this.highestInit = 0 // default highest initiative to be checked against is first in charsInScene array
       for (let i = 0; i < this.charsInScene.length; i++) { // for each character in charsInScene
         if (this.charsInScene[this.highestInit].getInitiative() < this.charsInScene[i].getInitiative()) { // if highest initiative has less initiative than next character in list
           this.highestInit = this.i // next character in list is now highest initiative
